@@ -511,6 +511,14 @@ P('Taiff','Secador Profissional','acessorios','Secador e modeladores',399.9,'a',
 P('BaBylissPRO','Prancha Nano Titanium','acessorios','Secador e modeladores',699.9,'a',[],[],0,'Prancha profissional de titânio.');
 P('Dyson','Airwrap Multi-Modelador','acessorios','Secador e modeladores',3999.9,'a',[],[],0,'Modelador que seca e faz cachos com ar.');
 P('Cetim','Touca e fronha de cetim','acessorios','Cetim',49.9,'p',[],[],0,'Para dormir sem frizz e sem quebrar os fios.');
+// Cachos · linhas profissionais (entram no lugar das marcas populares)
+P('Wella Professionals','Nutricurls Curlixir Balm 150 ml','cabelo','Finalizador',149.9,'t',['ondulado','cacheado','crespo'],['definicao','frizz'],0,'Bálsamo leave-in para definir cachos sem pesar.');
+P('Kérastase','Curl Manifesto Gelée Curl Contour 150 ml','cabelo','Finalizador',249.9,'t',['cacheado','crespo'],['definicao','frizz'],0,'Gel creme para definição e contorno dos cachos.');
+P("L'Oréal Professionnel",'Curl Expression Creme Leave-in 200 ml','cabelo','Leave-in',159.9,'t',['cacheado','crespo'],['ressecamento','definicao'],0,'Leave-in hidratante para cachos e crespos.');
+
+/* Fora do público da Nini: marcas nacionais populares. Filtradas aqui para não mudar o número (id) dos outros produtos. */
+var FORA_DO_PUBLICO = ['Lola Cosmetics','Salon Line','Widi Care','Natura','O Boticário'];
+PRODUTOS = PRODUTOS.filter(function(p){ return FORA_DO_PUBLICO.indexOf(p.marca) < 0; });
 
 /* Comentários sugeridos por categoria, para a Nini ajustar depois */
 var COMENTARIOS = {
@@ -550,15 +558,12 @@ var DATA_PRECOS = '08/10/2026';
 var REAIS = [
   ['Elixir Ultime', [['Amazon',161.91,'https://www.amazon.com.br/dp/B0D2LWFF2P',0]]],
   ['Uso Obrigatório', [['Amazon',108.20,'https://www.amazon.com.br/dp/B088ST252G',0],['Mercado Livre',133.29,'https://www.mercadolivre.com.br/truss-uso-obrigatorio-spray-260ml-protetor-termico/up/MLBU3360470303',1]]],
-  ['Morte Súbita', [['Amazon',30.50,'https://www.amazon.com.br/dp/B074LTNQBP',0],['Mercado Livre',30.50,'https://www.mercadolivre.com.br/mascara-de-hidratacao-morte-subita-450g-lola-cosmetics/p/MLB19485497',0]]],
-  ['Encrespando a Juba', [['Amazon',41.46,'https://www.amazon.com.br/dp/B07FYV4WK3',0],['Mercado Livre',59.90,'https://www.mercadolivre.com.br/creme-de-pentear-encrespando-a-juba-widi-care-modelador-de-cachos-500ml-virtual-cosmeticos/p/MLB68671657',0]]],
-  ['Crespo Divino', [['Amazon',23.99,'https://www.amazon.com.br/dp/B0BWSJC7T3',0]]],
   ['Nº3 Hair Perfector', [['Amazon',408.40,'https://www.amazon.com.br/dp/B07Y3XBF75',0],['Mercado Livre',385.00,'https://www.mercadolivre.com.br/creme-de-tratamento-olaplex-n3-hair-perfector-restauracao-de-100ml-100g/p/MLB19056287',1]]],
   ['Oil Reflections', [['Amazon',130.06,'https://www.amazon.com.br/dp/B07Y1T5YZ2',0]]],
   ['Perfect Serum', [['Amazon',52.15,'https://www.amazon.com.br/dp/B0GKCHJ6S9',0]]],
   ['Liso Mágico', [['Amazon',94.90,'https://www.amazon.com.br/dp/B077C3LTZR',0]]]
 ];
-var FOTOS = {'Elixir Ultime':'fotos/elixir.jpg','Uso Obrigatório':'fotos/truss.jpg','Morte Súbita':'fotos/lola.jpg','Encrespando a Juba':'fotos/juba.jpg','Crespo Divino':'fotos/crespo.jpg','Nº3 Hair Perfector':'fotos/olaplex.jpg','Oil Reflections':'fotos/wella.jpg','Perfect Serum':'fotos/mise.jpg','Liso Mágico':'fotos/lowell.jpg'};
+var FOTOS = {'Elixir Ultime':'fotos/elixir.jpg','Uso Obrigatório':'fotos/truss.jpg','Nº3 Hair Perfector':'fotos/olaplex.jpg','Oil Reflections':'fotos/wella.jpg','Perfect Serum':'fotos/mise.jpg','Liso Mágico':'fotos/lowell.jpg'};
 PRODUTOS.forEach(function(p){
   var r = REAIS.find(function(x){ return (p.marca+' '+p.nome).indexOf(x[0])>=0; });
   if(r){ p.real = true; p.lojas = r[1]; p.img = FOTOS[r[0]]; }
@@ -645,7 +650,7 @@ function perfilBox(){
   var probs = state.probs.map(nomeProb).join(', ');
   return '<div class="profile"><span>Seu cabelo: <b>'+nomeFio(state.fio)+'</b>'+(probs?' · '+esc(probs):'')+'</span><button data-act="quiz">Refazer</button></div>';
 }
-var PROTO = '<div class="proto">Protótipo · 9 produtos com preço real de 08/10, os demais abrem a busca na loja</div>';
+var PROTO = '<div class="proto">Protótipo · 6 produtos com preço real de 08/10, os demais abrem a busca na loja</div>';
 
 function telaInicio(){
   var lista = state.fio ? paraVoce() : PRODUTOS.filter(function(p){return p.dept==='cabelo' && !p.kr}).slice(0,8);
@@ -722,8 +727,8 @@ var FEED = [
   {tipo:'Review', quando:'ontem', prods:['Uso Obrigatório'], legenda:'Uso no salão há anos e sigo indicando. Duas borrifadas no cabelo úmido antes do secador. Rende bastante.', curt:31, com:7},
   {tipo:'Coreano testado', quando:'2 dias', prods:['Perfect Serum','Hair Loss Care'], legenda:'Testei os dois coreanos que vocês mais me perguntam. O sérum deixa o fio macio sem pesar. O shampoo tem cheiro forte de ervas, mas a raiz fica limpinha. Bom para quem tem queda e oleosidade.', curt:65, com:19},
   {tipo:'Dica', quando:'3 dias', prods:['Résistance Ciment','Tangle Teezer'], legenda:'Antes de secador ou prancha, protetor térmico sempre. E desembarace das pontas para a raiz, com uma escova que não puxa. Duas coisas simples que evitam muita quebra.', curt:22, com:4},
-  {tipo:'Achadinho da semana', quando:'5 dias', prods:['Morte Súbita','Juba'], legenda:'Achei os dois com preço ótimo essa semana. Funcionam muito bem e cabem no bolso.', curt:40, com:9},
-  {tipo:'Antes e depois', quando:'1 semana', ad:true, prods:['Juba','todecacho'], legenda:'Finalização com creme de pentear por mechas, secando natural, sem difusor. Ela vai repetir em casa com o Juba.', curt:57, com:15}
+  {tipo:'Achadinho da semana', quando:'5 dias', prods:['Oil Reflections','Elixir Ultime'], legenda:'Os dois óleos que eu mais uso no salão estão com preço bom essa semana.', curt:40, com:9},
+  {tipo:'Antes e depois', quando:'1 semana', ad:true, prods:['Curlixir','Curl Manifesto'], legenda:'Finalização com leave-in e gel creme por mechas, secando natural, sem difusor. Ela vai repetir em casa com o Curlixir.', curt:57, com:15}
 ];
 FEED.forEach(function(f,i){ f.id=i+1; f.ids = f.prods.map(porNome).filter(Boolean); });
 var curtidas = {};
