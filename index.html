@@ -367,6 +367,59 @@ h2{font-weight:500;font-size:1.75rem;line-height:1.1}
 .linkbtn{background:none;border:0;color:var(--berry);font-weight:500;padding:4px}
 .store.salao{border:1.5px solid var(--butter);background:var(--surface)}
 
+.deals{display:grid;grid-template-columns:1fr;gap:12px}
+@media (min-width:760px){.deals{grid-template-columns:1fr 1fr}}
+.deal{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:12px 14px;display:flex;flex-direction:column;gap:10px;min-width:0}
+.deal-head{display:flex;align-items:center;gap:10px}
+.deal-head .avatar{width:32px;height:32px;font-size:.95rem}
+.deal-head .who b{font-weight:500;display:block;line-height:1.15;font-size:.9rem}
+.deal-head .who small{color:var(--muted);font-size:.75rem}
+.dtag{margin-left:auto;font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;font-weight:600;padding:3px 9px;border-radius:99px}
+.dtag.promo{background:var(--berry);color:var(--berry-ink)} .dtag.rev{background:var(--nude);color:var(--nude-ink)}
+.deal-main{display:grid;grid-template-columns:110px 1fr;gap:12px;align-items:center}
+.deal-img{border:0;padding:0;background:none;position:relative;display:block}
+.deal-img .seal{display:none}
+.deal-img .off{position:absolute;left:6px;top:6px;background:var(--berry);color:var(--berry-ink);font-weight:600;font-size:.76rem;padding:3px 8px;border-radius:99px}
+.deal-info{display:flex;flex-direction:column;gap:3px;min-width:0}
+.deal-info .brandname{font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:500}
+.deal-info .pname{font-size:.95rem;line-height:1.25}
+.deal-info .de{color:var(--muted);text-decoration:line-through;font-size:.82rem}
+.deal-info .por{font-weight:600;font-size:1.1rem;font-variant-numeric:tabular-nums}
+.deal-info small{color:var(--muted);font-size:.76rem}
+.nini-diz{margin:0;font-size:.88rem;background:var(--bg);border-radius:10px;padding:8px 10px}
+.nini-diz b{font-weight:600;color:var(--berry)}
+.deal-acts{display:flex;gap:8px;flex-wrap:wrap}
+
+.scores{display:flex;flex-direction:column;gap:8px}
+.score{display:grid;grid-template-columns:120px 1fr 52px;align-items:center;gap:10px;font-size:.88rem}
+.score i{display:block;height:8px;border-radius:99px;background:var(--line);overflow:hidden}
+.score i b{display:block;height:100%;background:var(--berry);border-radius:99px}
+.score em{font-style:normal;font-size:.76rem;color:var(--muted);text-align:right}
+.alerta{background:var(--berry-soft);border-radius:12px;padding:12px 14px;display:flex;flex-direction:column;gap:6px}
+.alerta ul{margin:0;padding-left:1.1em;display:flex;flex-direction:column;gap:4px;font-size:.92rem}
+.fx-total{display:flex;gap:8px;flex-wrap:wrap}
+.fx-total span{background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:8px 12px;font-size:.82rem;display:flex;flex-direction:column}
+.fx-total b{font-weight:600}
+.etapa{border-top:1px solid var(--line);padding-top:12px;display:flex;flex-direction:column;gap:8px}
+.et-head{display:flex;align-items:center;gap:10px}
+.et-head .num,.analisa .num{width:26px;height:26px;border-radius:50%;background:var(--berry);color:var(--berry-ink);display:grid;place-items:center;font-size:.8rem;font-weight:600;flex-shrink:0}
+.et-head b{font-weight:600}
+.fx-grid{display:grid;grid-template-columns:1fr;gap:8px}
+@media (min-width:640px){.fx-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.fx-grid > div{display:flex;flex-direction:column;gap:4px;min-width:0}
+.fx-grid small{font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.fx-grid .pchip{width:100%}
+.fx-grid select{border:1px solid var(--line);background:var(--surface);border-radius:10px;padding:8px;font:inherit;font-size:.82rem;color:var(--ink);width:100%}
+.analisa{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+@media (min-width:760px){.analisa{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.analisa > div{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:12px;display:flex;flex-direction:column;gap:4px}
+.analisa b{font-weight:500;font-size:.92rem} .analisa small{color:var(--muted);font-size:.8rem}
+.recebe{margin:0;padding-left:1.2em;display:flex;flex-direction:column;gap:6px}
+.como{margin:0;padding-left:1.3em;display:flex;flex-direction:column;gap:8px}
+.faq{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:12px 14px}
+.faq summary{cursor:pointer;font-weight:500}
+.faq p{margin:8px 0 0;color:var(--muted);font-size:.92rem}
+
 .toast{position:fixed;left:50%;bottom:92px;transform:translateX(-50%);background:var(--ink);color:var(--bg);padding:10px 16px;border-radius:12px;font-size:.88rem;font-weight:600;z-index:20;max-width:calc(100% - 32px);text-align:center}
 </style>
 
@@ -375,10 +428,10 @@ h2{font-weight:500;font-size:1.75rem;line-height:1.1}
 <nav class="tabs" aria-label="Menu">
   <div class="inner">
     <button class="tab" data-tab="inicio"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg>Início</button>
-    <button class="tab" data-tab="feed"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="9" cy="9" r="2"/><path d="M21 15l-5-5L5 21"/></svg>Feed</button>
+    <button class="tab" data-tab="feed"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="9" cy="9" r="2"/><path d="M21 15l-5-5L5 21"/></svg>Promoções</button>
     <button class="tab" data-tab="achadinhos"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>Achadinhos</button>
     <button class="tab" data-tab="coreanos"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.5 5.5L20 9l-4 4 1 6-5-3-5 3 1-6-4-4 5.5-.5z"/></svg>Coreanos</button>
-    <button class="tab" data-tab="ofertas"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12V4h8l10 10-8 8z"/><circle cx="7.5" cy="8.5" r="1.5"/></svg>Ofertas</button>
+    <button class="tab" data-tab="ofertas"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12V4h8l10 10-8 8z"/><circle cx="7.5" cy="8.5" r="1.5"/></svg>Cupons</button>
     <button class="tab" data-tab="diagnostico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c3 4 6 7 6 11a6 6 0 0 1-12 0c0-4 3-7 6-11z"/></svg>Diagnóstico</button>
   </div>
 </nav>
@@ -564,13 +617,38 @@ var REAIS = [
   ['Liso Mágico', [['Amazon',94.90,'https://www.amazon.com.br/dp/B077C3LTZR',0]]]
 ];
 var FOTOS = {'Elixir Ultime':'fotos/elixir.jpg','Uso Obrigatório':'fotos/truss.jpg','Nº3 Hair Perfector':'fotos/olaplex.jpg','Oil Reflections':'fotos/wella.jpg','Perfect Serum':'fotos/mise.jpg','Liso Mágico':'fotos/lowell.jpg'};
+/* Amazon, consultado em 08/10/2026: chave~preço~preço de antes (0 = sem desconto)~ASIN~foto~avaliação */
+var AMZ_TXT = [
+'Masquintense~311.37~339~B0BZZK3R5S~4,7','Bain Divalent~192.75~202.9~B09FTGJT22~4,8','Ciment Thermique~256.13~289~B00MI6OWCQ~4,6',
+'Absolut Repair Molecular~256.4~349.9~B0D8JY97Z5~4,6','Metal Detox~134.9~193.9~B07BCCRWVT~4,8','Fusion Shampoo~79.9~125~B06Y2D6KSZ~4,8',
+'Fusion Condicionador~101.55~106.9~B0C2JHS29X~4,9','All Soft Shampoo~119.9~0~B08SSM21R4~4,5','All Soft Condicionador~239.9~0~B089F7HBJN~4,6',
+'Acidic Bonding~164~213~B0C5DZKL25~4,6','K-Pak~161.49~169.99~B000UYSSB4~4,2','Treatment Original~683.88~719.88~B0022H6JQI~4,8',
+'Nº7 Bonding Oil~246.81~319.81~B07VR1NDSQ~4,6','Night Spa~106.3~153.9~B085JGQDMT~4,7','Peptide Repair~104.52~130~B07B4NKVGF~4,4',
+'Curl Manifesto~358.06~376.9~B094RCCSKT~4,5','Curl Expression~194.36~214~B09XRW4BPT~4,3','Effaclar~100.43~0~B07KYVSKWR~4,8',
+'Loção Hidratante Facial~73.2~99.9~B0DN2YP2K1~4,7','Minéral 89~152~199.9~B06XC5PQGL~4,8','Relief Sun~236.55~249~B0B5PJ41ZT~4,6',
+'Centella Ampoule~128.25~202.16~B06Y15D1LH~4,6','DIVE-IN~222.75~234.48~B07WZ2YTDP~4,5','Dokdo~188.63~0~B08FM5BTF6~4,6',
+'Zero Pore Pad~168.08~0~B0FHJJJBY1~4,8','Bio-Collagen~188~197.9~B0B2RM68G2~4,4','Clean It Zero~139.9~0~B07BSKR5CG~4,7',
+'Miracle Toner~138.48~0~B07BYJF7L7~4,5','Lip Sleeping Mask~236.55~249~B07SDL65KC~4,7','Sky High~72.1~0~B08H46YXYH~4,7',
+'Ruby Woo~108.8~120.9~B0D2Y7HVM6~4,6','BT Skin~72.85~76.8~B09XC463LQ~3,7','Radiant Creamy~204.43~215.19~B00BM1WKT0~4,5',
+'Soft Pinch~319.07~331.88~B0C1CJFYCC~4,2','Juicy Lasting~123.38~0~B07ZKBZTKF~4,3','La Vie Est Belle~497.12~809~B008SBKTLI~4,6',
+'Good Girl~582.28~649.98~B082HZXHZW~4,7','Yara~185.25~195~B09C8VNWBP~4,6','Sauvage~566.98~699.99~B07MSFKCDX~4,6',
+'Bum Bum~339.05~356.9~B01EXQ582Q~4,5','Bare Vanilla~161.4~169.9~B07K1FFGMK~4,6','The Original~96.9~0~B07D395945~4,8',
+'Original Detangler~53.77~0~B09RG8Q3C3~4,7','Secador Profissional~299.19~343.9~B097HYQPJ1~4,7','Nano Titanium~1234.9~1299.9~B0H6CTP931~',
+'Airwrap~5405.4~5689.9~B0FJ2PGP5H~','Touca e fronha~85.49~89.99~B0GVPXMXXG~5,0'
+];
+var AMZ = AMZ_TXT.map(function(l){ var c=l.split('~'); return {key:c[0], por:+c[1], de:+c[2], asin:c[3], nota:c[4]}; });
 PRODUTOS.forEach(function(p){
-  var r = REAIS.find(function(x){ return (p.marca+' '+p.nome).indexOf(x[0])>=0; });
+  var nome = p.marca+' '+p.nome;
+  var r = REAIS.find(function(x){ return nome.indexOf(x[0])>=0; });
+  var a = AMZ.find(function(x){ return nome.indexOf(x.key)>=0; });
   if(r){ p.real = true; p.lojas = r[1]; p.img = FOTOS[r[0]]; }
-  else { p.real = false; p.lojas = [['ref', p.base, '', 0]]; }
+  else if(a){ p.real = true; p.lojas = [['Amazon', a.por, 'https://www.amazon.com.br/dp/'+a.asin, 0]]; p.img = 'fotos/a-'+a.asin+'.jpg'; }
+  if(a){ p.nota = a.nota; if(a.de > a.por){ var off = (a.de-a.por)/a.de; if(off >= 0.04 && off <= 0.6){ p.promo = {loja:'Amazon', de:a.de, por:a.por, link:'https://www.amazon.com.br/dp/'+a.asin}; } } }
 });
-/* Produtos com preço consultado aparecem primeiro nas vitrines */
-PRODUTOS.sort(function(a,b){ return (b.real?1:0)-(a.real?1:0); });
+/* Só ficam produtos com foto e link conferidos */
+PRODUTOS = PRODUTOS.filter(function(p){ return p.real; });
+function promosAuto(){ return PRODUTOS.filter(function(p){ return p.promo; }).map(function(p){ return {prodId:p.id, loja:p.promo.loja, de:p.promo.de, por:p.promo.por, link:p.promo.link, ate:'hoje', auto:true}; }); }
+function todasPromos(){ return (state.promos||[]).concat(promosAuto()).sort(function(a,b){ return pctOff(b)-pctOff(a); }); }
 
 var MARCAS = ['Kérastase','L\'Oréal Professionnel','Wella','Redken','Moroccanoil','Olaplex','Joico','Truss','Braé','Schwarzkopf'];
 
@@ -650,7 +728,7 @@ function perfilBox(){
   var probs = state.probs.map(nomeProb).join(', ');
   return '<div class="profile"><span>Seu cabelo: <b>'+nomeFio(state.fio)+'</b>'+(probs?' · '+esc(probs):'')+'</span><button data-act="quiz">Refazer</button></div>';
 }
-var PROTO = '<div class="proto">Protótipo · 6 produtos com preço real de 08/10, os demais abrem a busca na loja</div>';
+var PROTO = '<div class="proto">Protótipo · preços, fotos e links reais conferidos em 08/10</div>';
 
 function telaInicio(){
   var lista = state.fio ? paraVoce() : PRODUTOS.filter(function(p){return p.dept==='cabelo' && !p.kr}).slice(0,8);
@@ -659,7 +737,7 @@ function telaInicio(){
     '<div class="top"><span class="brand">Achadinhos da <i>Nini</i></span><button class="avbtn" data-act="painel" aria-label="Área da Nini" title="Área da Nini"><span class="avatar">N</span></button></div>'+
     '<div class="hero-car">'+
       '<section class="hero slide on"><span class="kick">Achadinhos da Nini</span><h1>Produtos que a Nini recomenda, pelo melhor preço e condição.</h1><p>Responda 2 perguntas e veja o que combina com o seu cabelo.</p><button class="btn light" data-act="quiz">Descobrir meu cabelo →</button></section>'+
-      '<section class="hero s2 slide"><span class="kick">Todo dia</span><h1>Ofertas e cupons escolhidos pela Nini.</h1><p>Promoções das lojas que valem a pena, separadas para você.</p><button class="btn light" data-tab="ofertas">Ver ofertas do dia →</button></section>'+
+      '<section class="hero s2 slide"><span class="kick">Todo dia</span><h1>Promoções de hoje escolhidas pela Nini.</h1><p>Produtos com desconto nas lojas, conferidos e separados para você.</p><button class="btn light" data-tab="feed">Ver promoções de hoje →</button></section>'+
       '<section class="hero s3 slide"><span class="kick">No salão</span><h1>Pronta entrega: reserve e retire hoje.</h1><p>Produtos que a Nini tem no salão, sem frete e sem espera.</p><button class="btn light" data-tab="pronta">Ver pronta entrega →</button></section>'+
       '<div class="dots">'+[0,1,2].map(function(i){ return '<button data-slide="'+i+'" aria-label="Destaque '+(i+1)+'" aria-current="'+(i===0)+'"></button>'; }).join('')+'</div>'+
     '</div>'+
@@ -674,7 +752,7 @@ function telaInicio(){
     (estoqueDisp().length ? '<button class="pe-banner" data-tab="pronta"><span class="ic">'+icone('pronta')+'</span><span><b>Pronta entrega no salão</b><small>'+estoqueDisp().length+' produtos para retirar hoje, sem frete</small></span></button>' : '')+
     '<section class="section"><div class="section-head"><h2>'+(state.fio?'Para o seu cabelo':'Mais indicados no cabelo')+'</h2><button data-dept="cabelo">Ver todos</button></div>'+
     (lista.length ? carrossel(lista.map(card).join('')) : '<p class="sub">Nenhum produto para essa combinação ainda.</p>')+'</section>'+
-    (state.promos && state.promos.length ? '<section class="section"><div class="section-head"><h2>Ofertas do dia</h2><button data-tab="ofertas">Ver todas</button></div>'+carrossel(state.promos.map(promoCard).join(''))+'</section>' : '')+
+    (todasPromos().length ? '<section class="section"><div class="section-head"><h2>Promoções de hoje</h2><button data-tab="feed">Ver todas</button></div>'+carrossel(todasPromos().slice(0,12).map(promoCard).join(''))+'</section>' : '')+
     '<section class="section"><div class="section-head"><h2>Coreanos em alta</h2><button data-tab="coreanos">Ver todos</button></div>'+carrossel(hype.map(card).join(''))+'</section>'+
     (window.NINI_SB ? '' : '<section class="section"><div class="section-head"><h2>No feed</h2><button data-tab="feed">Ver feed</button></div>'+
       '<button class="post" data-tab="feed" style="text-align:left;padding:0"><div class="photo ad" style="aspect-ratio:2/1"><div class="half" style="background:'+CORES[1]+'"><span>Antes</span></div><div class="half" style="background:'+CORES[4]+'"><span>Depois</span></div></div>'+
@@ -735,9 +813,46 @@ var curtidas = {};
 var feedTipo = null;
 var ICON_FOTO = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="9" cy="9" r="2"/><path d="M21 15l-5-5L5 21"/></svg>';
 
+/* Canal de achadinhos: promoções do dia + reviews curtas, no estilo dos perfis de promoção */
+var feedFiltro = null;
+function postsCanal(){
+  var promos = todasPromos().map(function(pr){ return {tipo:'promo', pr:pr, p:PRODUTOS.find(function(x){return x.id===pr.prodId})}; }).filter(function(o){ return o.p; });
+  var comPromo = {}; promos.forEach(function(o){ comPromo[o.p.id]=1; });
+  var reviews = PRODUTOS.filter(function(p){ return !comPromo[p.id] && p.nota && parseFloat(String(p.nota).replace(',','.'))>=4.6; })
+    .slice(0,12).map(function(p){ return {tipo:'review', p:p}; });
+  var out = [], ri = 0;
+  promos.forEach(function(o,i){ out.push(o); if(i%3===2 && ri<reviews.length) out.push(reviews[ri++]); });
+  while(ri<reviews.length) out.push(reviews[ri++]);
+  return out;
+}
+function postCanal(o){
+  var p = o.p, pr = o.pr, off = pr ? pctOff(pr) : 0;
+  var link = pr ? pr.link : (p.lojas[0] && p.lojas[0][2]) || linkLoja('Amazon', p);
+  var preco = pr ? '<span class="de">'+brl(+pr.de)+'</span> <span class="por">'+brl(+pr.por)+'</span>' : '<span class="por">'+precoTxt(p)+'</span>';
+  var loja = pr ? pr.loja : p.lojas[0][0];
+  return '<article class="deal"><div class="deal-head"><span class="avatar" aria-hidden="true">N</span><span class="who"><b>Achadinhos da Nini</b><small>hoje</small></span>'+
+    '<span class="dtag '+(pr?'promo':'rev')+'">'+(pr?'Promoção':'Review')+'</span></div>'+
+    '<div class="deal-main"><button class="deal-img" data-prod="'+p.id+'" aria-label="Ver '+esc(p.nome)+'">'+thumb(p)+(off?'<span class="off">-'+off+'%</span>':'')+'</button>'+
+    '<div class="deal-info"><span class="brandname">'+esc(p.marca)+'</span><span class="pname">'+esc(p.nome)+'</span><span>'+preco+'</span>'+
+    '<small>'+esc(loja)+(p.nota?' · ★ '+esc(p.nota)+' na Amazon':'')+'</small></div></div>'+
+    '<p class="nini-diz"><b>A Nini diz:</b> '+esc(COMENTARIOS[p.cat]||p.desc)+' <span class="exemplo">exemplo</span></p>'+
+    '<div class="deal-acts"><a class="btn primary sm" href="'+esc(link)+'" target="_blank" rel="noopener">'+(pr?'Pegar oferta':'Ver na loja')+' →</a><button class="btn ghost sm" data-prod="'+p.id+'">Comparar lojas</button></div></article>';
+}
 function telaFeed(){
-  if(window.NINI_SB) return '<div class="top"><h2>Feed da Nini</h2><span class="avatar" aria-hidden="true">N</span></div>'+
-    '<div class="empty"><b>Em breve, os antes e depois e as reviews da Nini.</b><span>Enquanto isso, veja os produtos que ela recomenda.</span><button class="btn ghost" data-tab="achadinhos">Ver achadinhos</button></div>';
+  var filtros = ['Cabelo','Skincare','Maquiagem','Perfumes','Até R$ 150','Acima de 20% off'];
+  var lista = postsCanal().filter(function(o){
+    if(!feedFiltro) return true;
+    if(feedFiltro==='Até R$ 150') return (o.pr ? +o.pr.por : menor(o.p)[1]) <= 150;
+    if(feedFiltro==='Acima de 20% off') return o.pr && pctOff(o.pr) >= 20;
+    return nomeDept(o.p.dept)===feedFiltro;
+  });
+  var nPromo = postsCanal().filter(function(o){return o.pr}).length;
+  return '<div class="top"><h2>Promoções de hoje</h2><span class="sub">'+nPromo+' ofertas</span></div>'+
+    '<p class="sub">Achadinhos com desconto, conferidos nas lojas em '+DATA_PRECOS+'.</p>'+
+    chipsSet('ftipo', filtros, feedFiltro, 'Tudo')+
+    (lista.length ? '<div class="deals">'+lista.map(postCanal).join('')+'</div>' : '<div class="empty"><b>Nada com esse filtro agora.</b></div>');
+}
+function telaFeedAntigo(){
   var tipos = ['Antes e depois','Review','Dica','Coreano testado','Achadinho da semana'];
   var lista = feedTipo ? FEED.filter(function(f){return f.tipo===feedTipo}) : FEED;
   return '<div class="proto">Protótipo · fotos de exemplo, legendas sugeridas</div>'+
@@ -921,12 +1036,10 @@ function cupomCard(c){
     (c.link?'<a class="linkbtn" href="'+esc(c.link)+'" target="_blank" rel="noopener">Ir à loja →</a>':'')+'</div>'+(c.validade?'<span class="val">Válido até '+esc(c.validade)+'</span>':'')+'</div></div>';
 }
 function telaOfertas(){
-  var pr = state.promos||[], cu = state.cupons||[];
+  var pr = todasPromos(), cu = state.cupons||[];
   return '<div class="proto">Protótipo · ofertas e cupons de exemplo, a Nini cadastra os reais</div>'+
-    '<div class="top"><h2>Ofertas do dia</h2></div><p class="sub">Promoções e cupons que a Nini conferiu e recomenda.</p>'+
-    (pr.length ? '<div class="grid">'+pr.map(promoCard).join('')+'</div>' : '<div class="empty"><b>Nenhuma promoção hoje.</b><span>Volte amanhã ou veja os achadinhos.</span></div>')+
-    '<div class="top"><h2>Cupons</h2></div>'+
-    (cu.length ? '<div class="cupons">'+cu.map(cupomCard).join('')+'</div>' : '<div class="empty"><b>Nenhum cupom ativo.</b></div>');
+    '<div class="top"><h2>Cupons</h2></div><p class="sub">Cupons de desconto que a Nini conferiu e recomenda.</p>'+
+    (cu.length ? '<div class="cupons">'+cu.map(cupomCard).join('')+'</div>' : '<div class="empty"><b>Nenhum cupom ativo agora.</b><span>Enquanto isso, veja as '+pr.length+' promoções de hoje.</span><button class="btn primary" data-tab="feed">Ver promoções</button></div>');
 }
 function telaOfertasAdm(){
   var pr = state.promos||[], cu = state.cupons||[];
@@ -980,15 +1093,31 @@ function setupCarrosseis(){
     TIMERS.push(setInterval(function(){ if(!hp && !document.hidden) mostrarSlide((slideAtual+1)%3); }, 5500)); }
 }
 
-/* ---------- Pré-diagnóstico ---------- */
+/* ---------- Pré-diagnóstico (8 etapas) ---------- */
 var QUIMICAS = ['Nenhuma','Coloração','Luzes ou mechas','Descoloração','Progressiva ou alisamento'];
+var QUANDO_QUIM = ['Menos de 1 mês','1 a 3 meses','3 a 6 meses','Mais de 6 meses'];
 var LAVAGEM = ['Todo dia','Dia sim, dia não','2 vezes por semana','1 vez por semana'];
 var CALOR = ['Quase nunca','1 a 2 vezes por semana','Quase todo dia'];
-var ORCAMENTO = ['Até R$ 100 por mês','R$ 100 a 250 por mês','Acima de R$ 250 por mês'];
+var TEMP = ['Não uso prancha','Até 180 °C','Acima de 180 °C','Não sei'];
+var ORCAMENTO = ['Até R$ 150 por mês','R$ 150 a 300 por mês','Acima de R$ 300 por mês'];
 var FORMATO = ['Online, por vídeo','No salão'];
 var COMPRIMENTO = ['Curto','Médio','Longo'];
+var IDADE = ['Até 25','26 a 35','36 a 45','46 a 55','56 ou mais'];
+var ESPESSURA = [{id:'Fino',nome:'Fino',desc:'quase não sente o fio entre os dedos'},{id:'Médio',nome:'Médio',desc:'sente o fio, mas é macio'},{id:'Grosso',nome:'Grosso',desc:'fio firme e bem marcado'}];
+var VOLUME = ['Pouco','Médio','Muito'];
+var COURO = [{id:'Normal',nome:'Normal',desc:'nem oleoso, nem seco'},{id:'Oleoso',nome:'Oleoso',desc:'raiz oleosa em 1 dia'},{id:'Seco',nome:'Seco',desc:'repuxa ou descama'},{id:'Misto',nome:'Misto',desc:'raiz oleosa e pontas secas'}];
+var SINTOMAS = ['Coceira','Caspa ou descamação','Sensibilidade','Queda acima do normal','Nenhum'];
+var POROSIDADE = [{id:'Alta',nome:'Afundou rápido',desc:'porosidade alta'},{id:'Média',nome:'Ficou no meio',desc:'porosidade média'},{id:'Baixa',nome:'Boiou',desc:'porosidade baixa'},{id:'Não fiz',nome:'Não fiz o teste',desc:'tudo bem, a Nini avalia'}];
+var ELASTICIDADE = [{id:'Boa',nome:'Estica e volta',desc:'elasticidade boa'},{id:'Elástico',nome:'Estica e não volta',desc:'fio sem massa'},{id:'Quebradiço',nome:'Quebra fácil',desc:'fio quebradiço'},{id:'Não fiz',nome:'Não fiz o teste',desc:'tudo bem, a Nini avalia'}];
+var HABITOS = ['Piscina','Mar','Sol frequente','Academia ou suor diário','Dorme de cabelo molhado','Nenhum'];
+var FINALIZACAO = ['Natural','Escova','Prancha','Babyliss ou modelador'];
+var TEMPO = ['Até 5 minutos','Uns 15 minutos','30 minutos ou mais'];
+var SAUDE = ['Gestante ou amamentando','Pós-parto recente','Alteração hormonal','Medicação contínua','Alergia a cosmético','Nada disso'];
+var OBJETIVO = ['Crescimento saudável','Brilho e maciez','Recuperar da química','Controlar o frizz','Definir os cachos','Diminuir a queda'];
+var EXCLUSIVOS = {quimica:'Nenhuma', sintomas:'Nenhum', habitos:'Nenhum', saude:'Nada disso'};
+var TOTAL_PASSOS = 8;
 var CRONO = {H:'Hidratação', N:'Nutrição', R:'Reconstrução'};
-state.diag = 'home'; state.form = {quimica:[], queixas:[]}; state.passo = 1; state.erro = '';
+state.diag = 'home'; state.form = {quimica:[], queixas:[], sintomas:[], habitos:[], saude:[]}; state.passo = 1; state.erro = '';
 state.meuPedido = null; state.minhaPres = null; state.pedidos = null; state.pedAberto = null; state.editor = null;
 
 function fSel(field, opts){
@@ -1000,66 +1129,151 @@ function fMul(field, opts){
   return '<div class="options">'+opts.map(function(o){ var v=o.id||o, n=o.nome||o;
     return '<button class="opt" data-fmul="'+field+'|'+esc(v)+'" aria-pressed="'+(arr.indexOf(v)>=0)+'"><b>'+esc(n)+'</b>'+(o.desc?'<span>'+esc(o.desc)+'</span>':'')+'</button>'; }).join('')+'</div>';
 }
+function campo(id, field, label, tipo, ph, extra){
+  var v = esc(state.form[field]||'');
+  if(tipo==='area') return '<div class="field"><label for="'+id+'">'+label+'</label><textarea id="'+id+'" data-fin="'+field+'" placeholder="'+ph+'">'+v+'</textarea></div>';
+  return '<div class="field"><label for="'+id+'">'+label+'</label><input id="'+id+'" data-fin="'+field+'" type="'+tipo+'" value="'+v+'" placeholder="'+ph+'"'+(extra||'')+'></div>';
+}
 function telaForm(){
   var f = state.form, p = state.passo, corpo = '';
-  if(p===1) corpo = '<h2>Vamos começar</h2><p class="sub">A Nini usa essas respostas para preparar a sua consulta.</p>'+
-    '<div class="field"><label for="f-nome">Seu nome</label><input id="f-nome" data-fin="nome" type="text" autocomplete="name" value="'+esc(f.nome||'')+'" placeholder="Maria Clara"></div>'+
-    '<div class="field"><label for="f-whats">WhatsApp</label><input id="f-whats" data-fin="whats" type="tel" autocomplete="tel" value="'+esc(f.whats||'')+'" placeholder="(34) 99999-0000"></div>';
-  if(p===2) corpo = '<h2>Seu cabelo hoje</h2><span class="label">Tipo de fio</span>'+fSel('fio', FIOS)+'<span class="label">Comprimento</span>'+fSel('comprimento', COMPRIMENTO);
-  if(p===3) corpo = '<h2>Química e rotina</h2><span class="label">Já fez alguma química? Pode marcar mais de uma</span>'+fMul('quimica', QUIMICAS)+
-    '<span class="label">Com que frequência lava</span>'+fSel('lavagem', LAVAGEM)+'<span class="label">Usa secador ou prancha</span>'+fSel('calor', CALOR);
-  if(p===4) corpo = '<h2>O que mais incomoda</h2><p class="sub">Pode marcar mais de um.</p>'+fMul('queixas', PROBLEMAS)+
-    '<div class="field"><label for="f-obj">O que você quer para o seu cabelo?</label><textarea id="f-obj" data-fin="objetivo" placeholder="Quero que o loiro pare de quebrar e fique com brilho">'+esc(f.objetivo||'')+'</textarea></div>';
-  if(p===5) corpo = '<h2>Últimos detalhes</h2><span class="label">Quanto quer investir em produtos</span>'+fSel('orcamento', ORCAMENTO)+
-    '<span class="label">Como prefere a consulta</span>'+fSel('formato', FORMATO)+
-    '<div class="field"><label for="f-fotos">Fotos do cabelo: raiz, comprimento e pontas</label><input id="f-fotos" type="file" accept="image/*" multiple></div>'+
+  var temQuim = (f.quimica||[]).some(function(x){ return x!=='Nenhuma'; });
+  if(p===1) corpo = '<h2>Vamos começar</h2><p class="sub">Leva uns 5 minutos. A Nini usa as respostas para preparar a sua consulta.</p>'+
+    campo('f-nome','nome','Seu nome','text','Maria Clara',' autocomplete="name"')+campo('f-whats','whats','WhatsApp','tel','(34) 99999-0000',' autocomplete="tel"')+
+    '<span class="label">Idade</span>'+fSel('idade', IDADE);
+  if(p===2) corpo = '<h2>Seu fio</h2><span class="label">Tipo</span>'+fSel('fio', FIOS)+'<span class="label">Espessura</span>'+fSel('espessura', ESPESSURA)+
+    '<span class="label">Quantidade de cabelo</span>'+fSel('volume', VOLUME)+'<span class="label">Comprimento</span>'+fSel('comprimento', COMPRIMENTO);
+  if(p===3) corpo = '<h2>Couro cabeludo</h2><span class="label">Como ele é</span>'+fSel('couro', COURO)+
+    '<span class="label">Sente alguma coisa? Pode marcar mais de uma</span>'+fMul('sintomas', SINTOMAS)+'<span class="label">Com que frequência lava</span>'+fSel('lavagem', LAVAGEM);
+  if(p===4) corpo = '<h2>Dois testes rápidos</h2><p class="sub">Use um fio que caiu no pente. Se preferir não fazer, a Nini avalia na consulta.</p>'+
+    '<span class="label">Teste do copo: deixe o fio num copo com água por 3 minutos</span>'+fSel('porosidade', POROSIDADE)+
+    '<span class="label">Teste do elástico: molhe o fio e estique devagar</span>'+fSel('elasticidade', ELASTICIDADE);
+  if(p===5) corpo = '<h2>Química e calor</h2><span class="label">Química no cabelo. Pode marcar mais de uma</span>'+fMul('quimica', QUIMICAS)+
+    (temQuim ? '<span class="label">Quando foi a última</span>'+fSel('quandoQuimica', QUANDO_QUIM) : '')+
+    '<span class="label">Usa secador ou prancha</span>'+fSel('calor', CALOR)+'<span class="label">Temperatura da prancha</span>'+fSel('temperatura', TEMP);
+  if(p===6) corpo = '<h2>Rotina e hábitos</h2>'+campo('f-prod','produtos','Produtos que você usa hoje','area','Shampoo, máscara, leave-in… pode colocar as marcas')+
+    '<span class="label">Hábitos. Pode marcar mais de um</span>'+fMul('habitos', HABITOS)+'<span class="label">Como costuma finalizar</span>'+fSel('finalizacao', FINALIZACAO)+
+    '<span class="label">Tempo que tem para a rotina</span>'+fSel('tempo', TEMPO);
+  if(p===7) corpo = '<h2>Saúde e sensibilidades</h2><p class="sub">Opcional. Só a Nini vê e ajuda a indicar produtos seguros para você.</p>'+fMul('saude', SAUDE)+
+    campo('f-alergia','alergias','Alergia ou produto que já deu reação','text','Ex.: fragrância, formol, amônia');
+  if(p===8) corpo = '<h2>Seus objetivos</h2><span class="label">O que mais incomoda. Pode marcar mais de um</span>'+fMul('queixas', PROBLEMAS)+
+    '<span class="label">Objetivo principal</span>'+fSel('objetivoPrincipal', OBJETIVO)+campo('f-obj','objetivo','Conte com suas palavras','area','Quero que o loiro pare de quebrar e fique com brilho')+
+    '<span class="label">Quanto quer investir em produtos</span>'+fSel('orcamento', ORCAMENTO)+'<span class="label">Como prefere a consulta</span>'+fSel('formato', FORMATO)+
+    '<div class="field"><label for="f-fotos">Fotos: raiz, comprimento e pontas (até 6)</label><input id="f-fotos" type="file" accept="image/*" multiple></div>'+
     (f.fotosUrls && f.fotosUrls.length ? '<div class="thumbs">'+f.fotosUrls.map(function(u){ return '<img src="'+u+'" alt="Foto enviada">'; }).join('')+'</div>' : '')+
-    '<p class="note">Fotos com luz natural ajudam muito no diagnóstico.</p>';
-  return '<div class="form"><div class="top"><button class="close" data-act="diag-back">← Voltar</button><span class="sub">'+p+' de 5</span></div>'+
-    '<div class="steps">'+[1,2,3,4,5].map(function(i){ return '<i class="'+(i<=p?'on':'')+'"></i>'; }).join('')+'</div>'+corpo+
+    '<p class="note">Use luz natural, cabelo seco e sem finalizador.</p>';
+  return '<div class="form"><div class="top"><button class="close" data-act="diag-back">← Voltar</button><span class="sub">'+p+' de '+TOTAL_PASSOS+'</span></div>'+
+    '<div class="steps">'+Array.from({length:TOTAL_PASSOS}, function(_,i){ return '<i class="'+(i<p?'on':'')+'"></i>'; }).join('')+'</div>'+corpo+
     (state.erro ? '<p class="err" role="alert">'+esc(state.erro)+'</p>' : '')+
-    '<button class="btn primary block" data-act="'+(p<5?'diag-next':'diag-send')+'">'+(p<5?'Continuar':'Enviar para a Nini')+'</button></div>';
+    '<button class="btn primary block" data-act="'+(p<TOTAL_PASSOS?'diag-next':'diag-send')+'">'+(p<TOTAL_PASSOS?'Continuar':'Enviar para a Nini')+'</button></div>';
 }
 
 /* ---------- Prescrição ---------- */
-function sugerirPrescricao(ped){
-  var q = ped.queixas||[], quim = (ped.quimica||[]).filter(function(x){return x!=='Nenhuma'});
-  var cands = PRODUTOS.filter(function(x){ return x.dept==='cabelo' && (!ped.fio || x.fios.indexOf(ped.fio)>=0); });
-  var foco = cands.filter(function(x){ return x.probs.some(function(z){ return q.indexOf(z)>=0; }); });
-  var pool = foco.length>=4 ? foco : cands;
-  function faixa(min,max){ return pool.filter(function(x){ var m=menor(x)[1]; return m>=min && m<max; }).slice(0,3).map(function(x){return x.id}); }
-  var temQuim = quim.length>0 || q.indexOf('quimica')>=0;
-  var crono = temQuim ? ['H','R','N','R'] : q.indexOf('ressecamento')>=0 ? ['H','N','H','N'] : ['H','H','N','H'];
-  var focoTxt = temQuim ? 'repor a força do fio e segurar a quebra' : q.indexOf('ressecamento')>=0 ? 'devolver nutrição e brilho' : q.indexOf('frizz')>=0 ? 'hidratar e controlar o frizz' : q.indexOf('queda')>=0 ? 'cuidar do couro cabeludo e diminuir a queda' : 'manter o fio saudável';
-  var diag = 'Cabelo '+(nomeFio(ped.fio)||'').toLowerCase()+(ped.comprimento?' e '+ped.comprimento.toLowerCase():'')+
-    (quim.length ? ', com '+quim.join(', ').toLowerCase() : ', sem química')+'. '+
-    (q.length ? 'Pontos de atenção: '+q.map(nomeProb).join(', ').toLowerCase()+'. ' : '')+
-    'A rotina abaixo foca em '+focoTxt+'.';
-  var passos = ['Shampoo duas vezes, concentrando na raiz', (temQuim?'Máscara de reconstrução ou nutrição, conforme o cronograma':'Máscara do cronograma, do meio para as pontas'), 'Leave-in com o cabelo ainda úmido'];
-  if(ped.fio==='cacheado' || ped.fio==='crespo') passos.push('Creme de pentear por mechas e deixar secar sem mexer');
-  if(ped.calor && ped.calor!=='Quase nunca') passos.push('Protetor térmico antes de secador ou prancha');
-  var dicas = [];
-  if(ped.calor==='Quase todo dia') dicas.push('Tente usar prancha no máximo duas vezes por semana.');
-  if(ped.lavagem==='Todo dia' && q.indexOf('oleosidade')<0) dicas.push('Se der, lave dia sim, dia não. O fio agradece.');
-  dicas.push('Durma com fronha ou touca de cetim.');
-  return {diagnostico:diag, cronograma:crono, passos:passos, faixas:{economica:faixa(0,70), intermediaria:faixa(70,200), premium:faixa(200,1e9)}, dicas:dicas.join(' ')};
+function nivel(v){ return Math.max(5, Math.min(100, Math.round(v))); }
+function calcScores(ped){
+  var q = ped.queixas||[], quim = (ped.quimica||[]).filter(function(x){return x!=='Nenhuma'}), hab = ped.habitos||[], sint = ped.sintomas||[];
+  var tem = function(arr, v){ return arr.indexOf(v)>=0; };
+  var H=35, N=30, R=15, C=15;
+  if(tem(q,'frizz')) H+=20; if(ped.porosidade==='Alta'){ H+=15; N+=10; } if(ped.porosidade==='Baixa') H-=5;
+  if(ped.calor==='Quase todo dia'){ H+=10; R+=15; } if(ped.temperatura==='Acima de 180 °C') R+=10;
+  if(tem(hab,'Piscina')||tem(hab,'Mar')||tem(hab,'Sol frequente')){ H+=10; N+=5; }
+  if(ped.espessura==='Fino') H+=5;
+  if(tem(q,'ressecamento')) N+=25; if(ped.fio==='cacheado'||ped.fio==='crespo') N+=15; if(ped.couro==='Seco'||ped.couro==='Misto') N+=10;
+  if(quim.length) R+=25; if(tem(quim,'Descoloração')) R+=20; if(tem(q,'quimica')) R+=10;
+  if(ped.elasticidade==='Elástico') R+=20; if(ped.elasticidade==='Quebradiço'){ R+=15; N+=10; }
+  if(ped.quandoQuimica==='Menos de 1 mês') R+=5;
+  if(ped.couro==='Oleoso'||tem(q,'oleosidade')) C+=30; if(ped.couro==='Misto') C+=15;
+  if(tem(q,'queda')||tem(sint,'Queda acima do normal')) C+=30;
+  if(tem(sint,'Coceira')||tem(sint,'Caspa ou descamação')||tem(sint,'Sensibilidade')) C+=20;
+  if(tem(hab,'Dorme de cabelo molhado')) C+=10;
+  return {H:nivel(H), N:nivel(N), R:nivel(R), C:nivel(C)};
 }
-var FAIXAS = [['economica','Econômica'],['intermediaria','Intermediária'],['premium','Premium']];
+var NECESS = {H:'Hidratação', N:'Nutrição', R:'Reconstrução', C:'Couro cabeludo'};
+var FX_LIM = {economica:[0,120], intermediaria:[120,250], premium:[250,1e9]};
+function candEtapa(ped, cats, f, extra){
+  var lim = FX_LIM[f], q = (ped.queixas||[]).concat(extra||[]);
+  var c = PRODUTOS.filter(function(x){ var m=menor(x)[1]; return x.dept==='cabelo' && cats.indexOf(x.cat)>=0 && (!ped.fio || x.fios.indexOf(ped.fio)>=0) && m>=lim[0] && m<lim[1]; });
+  c.sort(function(a,b){ return b.probs.filter(function(z){return q.indexOf(z)>=0}).length - a.probs.filter(function(z){return q.indexOf(z)>=0}).length; });
+  return c;
+}
+function idsEtapa(ped, cats, extra){ var o={}; ['economica','intermediaria','premium'].forEach(function(f){ var c=candEtapa(ped,cats,f,extra); o[f]=c.length?c[0].id:null; }); return o; }
+function sugerirPrescricao(ped){
+  var s = calcScores(ped), quim = (ped.quimica||[]).filter(function(x){return x!=='Nenhuma'}), hab = ped.habitos||[];
+  var ord = ['H','N','R'].sort(function(a,b){ return s[b]-s[a]; });
+  var crono = ord[0]==='R' ? ['H','R','N','R'] : ord[0]==='N' ? (s.R>=50?['H','N','R','N']:['H','N','H','N']) : (s.R>=50?['H','R','H','N']:['H','H','N','H']);
+  var cacho = ped.fio==='cacheado' || ped.fio==='crespo';
+  var lav = ped.couro==='Oleoso' ? '4 a 5 vezes por semana, com shampoo suave' : cacho ? '2 a 3 vezes por semana' : '3 vezes por semana';
+  var maior = ['H','N','R','C'].sort(function(a,b){ return s[b]-s[a]; })[0];
+  var focoTxt = {H:'devolver água ao fio e controlar o frizz', N:'repor óleos e trazer brilho e maciez', R:'repor massa e segurar a quebra', C:'equilibrar o couro cabeludo e cuidar da raiz'}[maior];
+  var diag = 'Fio '+(nomeFio(ped.fio)||'').toLowerCase()+(ped.espessura?' e '+ped.espessura.toLowerCase():'')+(ped.comprimento?', '+ped.comprimento.toLowerCase():'')+
+    (quim.length ? ', com '+quim.join(', ').toLowerCase()+(ped.quandoQuimica?' ('+ped.quandoQuimica.toLowerCase()+')':'') : ', sem química')+'. '+
+    (ped.couro ? 'Couro cabeludo '+ped.couro.toLowerCase()+'. ' : '')+
+    (ped.porosidade && ped.porosidade!=='Não fiz' ? 'Porosidade '+ped.porosidade.toLowerCase()+'. ' : '')+
+    'A maior necessidade agora é '+NECESS[maior].toLowerCase()+': o plano foca em '+focoTxt+'.';
+  var et = [
+    {etapa:'Shampoo', cats:['Shampoo'], extra:s.C>=45?['oleosidade','queda']:[], como:'Duas lavagens: a primeira limpa, a segunda trata. Massageie a raiz com a ponta dos dedos.'},
+    {etapa:'Tratamento do cronograma', cats:['Máscara','Tratamento'], extra:s.R>=50?['quimica']:['ressecamento'], como:'A máscara da semana (veja o cronograma), do meio para as pontas, por 10 a 15 minutos.'},
+    {etapa:'Condicionador', cats:['Condicionador'], extra:[], como:'Nos dias sem máscara, do meio para as pontas. Enxágue com água fria.'},
+    {etapa:cacho?'Leave-in e finalização':'Leave-in e proteção', cats:['Leave-in','Protetor térmico','Finalizador'], extra:[], como:cacho?'No cabelo bem molhado, por mechas. Deixe secar sem mexer.':'No cabelo úmido, antes de secar. Protege do calor e do frizz.'},
+    {etapa:'Óleo ou sérum', cats:['Óleo e sérum'], extra:[], como:'Uma ou duas gotas nas pontas, com o cabelo seco.'}
+  ];
+  if(s.C>=45) et.push({etapa:'Couro cabeludo', cats:['Antiqueda','Shampoo'], extra:['queda','oleosidade'], como:'Direto na raiz, conforme a embalagem. O resultado aparece com uso contínuo.'});
+  var etapas = et.map(function(e){ return {etapa:e.etapa, cats:e.cats, como:e.como, ids:idsEtapa(ped, e.cats, e.extra)}; })
+    .filter(function(e){ return e.ids.economica || e.ids.intermediaria || e.ids.premium; });
+  var alertas = [];
+  if(quim.indexOf('Descoloração')>=0 && ped.quandoQuimica==='Menos de 1 mês') alertas.push('Evite nova química por pelo menos 30 dias. O fio ainda está sensível.');
+  if(ped.temperatura==='Acima de 180 °C') alertas.push('Baixe a prancha para até 180 °C e use sempre protetor térmico.');
+  if(ped.calor==='Quase todo dia') alertas.push('Tente usar calor no máximo 2 vezes por semana.');
+  if((ped.saude||[]).some(function(x){ return x!=='Nada disso'; })) alertas.push('Antes de qualquer química, converse com o seu médico.');
+  if(ped.elasticidade==='Quebradiço') alertas.push('Fio quebradiço: um corte das pontas danificadas faz o tratamento render mais.');
+  var salao = [];
+  if(s.R>=55) salao.push('Reconstrução profissional a cada 15 dias no primeiro mês');
+  if(s.N>=55) salao.push('Nutrição ou cauterização profissional uma vez por mês');
+  if(s.H>=55) salao.push('Hidratação profunda no salão uma vez por mês');
+  if(s.C>=50) salao.push('Terapia capilar com detox do couro cabeludo');
+  if(!salao.length) salao.push('Manutenção no salão a cada 45 dias');
+  var dicas = [];
+  if(ped.lavagem==='Todo dia' && s.C<45) dicas.push('Se der, lave dia sim, dia não.');
+  if(hab.indexOf('Piscina')>=0 || hab.indexOf('Mar')>=0) dicas.push('Antes de piscina ou mar, molhe o cabelo com água doce e passe leave-in.');
+  if(hab.indexOf('Dorme de cabelo molhado')>=0) dicas.push('Evite dormir de cabelo molhado: seque pelo menos a raiz.');
+  dicas.push('Durma com fronha ou touca de cetim.');
+  return {versao:2, diagnostico:diag, scores:s, cronograma:crono, lavagens:lav, etapas:etapas, alertasTxt:alertas.join('\n'), salaoTxt:salao.join('\n'), dicas:dicas.join(' ')};
+}
+var FAIXAS = [['economica','Essencial'],['intermediaria','Intermediária'],['premium','Premium']];
 function miniProd(id){ var p = PRODUTOS.find(function(x){return x.id===id}); if(!p) return '';
-  return '<button class="pchip" data-prod="'+id+'"><i style="background:'+CORES[id % CORES.length]+'"></i><span><b>'+esc(p.marca)+'</b><small>'+esc(p.nome.split(' ').slice(0,4).join(' '))+(p.real?' · '+precoTxt(p):'')+'</small></span></button>'; }
+  return '<button class="pchip" data-prod="'+id+'">'+(p.img?'<img src="'+p.img+'" alt="" style="width:30px;height:30px;object-fit:contain;border-radius:6px;background:#fff">':'<i style="background:'+CORES[id % CORES.length]+'"></i>')+'<span><b>'+esc(p.marca)+'</b><small>'+esc(p.nome.split(' ').slice(0,4).join(' '))+(p.real?' · '+precoTxt(p):'')+'</small></span></button>'; }
+function barra(nome, v){ return '<div class="score"><span>'+nome+'</span><i><b style="width:'+v+'%"></b></i><em>'+(v>=60?'Alta':v>=35?'Média':'Baixa')+'</em></div>'; }
+function linhas(t){ return String(t||'').split('\n').map(function(x){return x.trim()}).filter(Boolean); }
 function rotinaHTML(pres, ped, exemplo){
+  if(!pres.versao) return rotinaV1(pres, ped, exemplo);
+  var nome = (ped.nome||'').split(' ')[0], s = pres.scores||{H:0,N:0,R:0,C:0};
+  var al = linhas(pres.alertasTxt), sal = linhas(pres.salaoTxt);
+  var totais = FAIXAS.map(function(f){ var t=0; (pres.etapas||[]).forEach(function(e){ var id=e.ids&&e.ids[f[0]], x=id&&PRODUTOS.find(function(p){return p.id===id}); if(x) t+=menor(x)[1]; }); return [f[1], t]; });
+  return '<section class="panel"><span class="label">Seu diagnóstico'+(exemplo?' · exemplo':'')+'</span><h2>'+(nome?'Oi, '+esc(nome):'Seu diagnóstico')+'</h2><p>'+esc(pres.diagnostico)+'</p>'+
+    '<span class="label">Necessidades do seu cabelo</span><div class="scores">'+barra('Hidratação',s.H)+barra('Nutrição',s.N)+barra('Reconstrução',s.R)+barra('Couro cabeludo',s.C)+'</div>'+
+    '<span class="label">Cronograma de 4 semanas</span><div class="crono">'+pres.cronograma.map(function(c,i){ return '<div class="wk"><small>Semana '+(i+1)+'</small><span class="cr '+c+'">'+CRONO[c]+'</span></div>'; }).join('')+'</div>'+
+    (pres.lavagens ? '<p class="sub"><b>Lavagem:</b> '+esc(pres.lavagens)+'</p>' : '')+
+    (al.length ? '<div class="alerta"><span class="label">Atenção</span><ul>'+al.map(function(a){ return '<li>'+esc(a)+'</li>'; }).join('')+'</ul></div>' : '')+
+    '</section>'+
+    '<section class="panel"><span class="label">Sua rotina passo a passo</span><p class="sub">Para cada etapa há três opções de investimento. Escolha a que cabe no seu bolso.</p>'+
+    '<div class="fx-total">'+totais.filter(function(t){return t[1]>0}).map(function(t){ return '<span><b>'+t[0]+'</b>kit completo aprox. '+brl(Math.round(t[1]))+'</span>'; }).join('')+'</div>'+
+    (pres.etapas||[]).map(function(e,i){ return '<div class="etapa"><div class="et-head"><span class="num">'+(i+1)+'</span><b>'+esc(e.etapa)+'</b></div><p class="sub">'+esc(e.como)+'</p>'+
+      '<div class="fx-grid">'+FAIXAS.map(function(f){ var id=e.ids&&e.ids[f[0]]; return id ? '<div><small>'+f[1]+'</small>'+miniProd(id)+'</div>' : ''; }).join('')+'</div></div>'; }).join('')+
+    '</section>'+
+    '<section class="panel"><span class="label">No salão com a Nini</span><ul>'+sal.map(function(x){ return '<li>'+esc(x)+'</li>'; }).join('')+'</ul>'+
+    (pres.dicas ? '<span class="label">Dicas da Nini</span><p>'+esc(pres.dicas)+'</p>' : '')+
+    '<p class="note">Em 30 dias, mande uma foto pelo WhatsApp e a Nini ajusta o seu plano.</p>'+
+    '<button class="btn primary block" data-act="whats">Agendar no salão pelo WhatsApp</button></section>';
+}
+function rotinaV1(pres, ped, exemplo){
   var nome = (ped.nome||'').split(' ')[0];
   return '<section class="panel"><span class="label">Sua rotina'+(exemplo?' · exemplo':'')+'</span><h2>'+(nome?'Oi, '+esc(nome):'Sua rotina')+'</h2><p>'+esc(pres.diagnostico)+'</p>'+
-    '<span class="label">Cronograma de 4 semanas</span><div class="crono">'+pres.cronograma.map(function(c,i){ return '<div class="wk"><small>Semana '+(i+1)+'</small><span class="cr '+c+'">'+CRONO[c]+'</span></div>'; }).join('')+'</div>'+
-    '<span class="label">Passo a passo da lavagem</span><ol>'+(pres.passos||[]).map(function(s){ return '<li>'+esc(s)+'</li>'; }).join('')+'</ol>'+
-    '<span class="label">Escolha o seu investimento</span>'+
-    FAIXAS.map(function(f){ var ids = (pres.faixas||{})[f[0]]||[]; if(!ids.length) return '';
-      var total = ids.reduce(function(s,id){ var x=PRODUTOS.find(function(p){return p.id===id}); return s + (x?menor(x)[1]:0); }, 0);
-      return '<div class="faixa"><b>'+f[1]+' <small style="color:var(--muted);font-weight:400">· investimento aprox. '+brl(Math.round(total))+'</small></b><div class="pchips" style="flex-direction:column">'+ids.map(miniProd).join('')+'</div></div>'; }).join('')+
-    (pres.dicas ? '<span class="label">Dicas da Nini</span><p>'+esc(pres.dicas)+'</p>' : '')+
-    '<p class="note">Em 30 dias, mande uma foto pelo WhatsApp e a Nini ajusta a sua rotina.</p></section>';
+    '<span class="label">Cronograma de 4 semanas</span><div class="crono">'+(pres.cronograma||[]).map(function(c,i){ return '<div class="wk"><small>Semana '+(i+1)+'</small><span class="cr '+c+'">'+CRONO[c]+'</span></div>'; }).join('')+'</div>'+
+    '<span class="label">Passo a passo</span><ol>'+(pres.passos||[]).map(function(s){ return '<li>'+esc(s)+'</li>'; }).join('')+'</ol>'+
+    (pres.dicas ? '<span class="label">Dicas da Nini</span><p>'+esc(pres.dicas)+'</p>' : '')+'</section>';
 }
-var EXEMPLO_PED = {nome:'Ana', fio:'ondulado', comprimento:'Longo', quimica:['Luzes ou mechas'], lavagem:'Dia sim, dia não', calor:'1 a 2 vezes por semana', queixas:['frizz','quimica'], orcamento:'R$ 100 a 250 por mês'};
+var EXEMPLO_PED = {nome:'Ana', idade:'26 a 35', fio:'ondulado', espessura:'Fino', volume:'Médio', comprimento:'Longo', couro:'Misto', sintomas:['Nenhum'], lavagem:'Dia sim, dia não',
+  porosidade:'Alta', elasticidade:'Elástico', quimica:['Luzes ou mechas'], quandoQuimica:'1 a 3 meses', calor:'1 a 2 vezes por semana', temperatura:'Acima de 180 °C',
+  habitos:['Sol frequente'], finalizacao:'Escova', tempo:'Uns 15 minutos', saude:['Nada disso'], queixas:['frizz','quimica'], objetivoPrincipal:'Recuperar da química', orcamento:'R$ 150 a 300 por mês'};
 
 async function carregarMeu(){
   var id = null; try{ id = localStorage.getItem('nini-meu-pedido'); }catch(e){}
@@ -1073,18 +1287,30 @@ async function carregarMeu(){
   if(state.tab==='diagnostico') render();
 }
 
+var ANALISA = [['Tipo e espessura do fio','como o fio se comporta'],['Porosidade','quanto o fio absorve e perde água'],['Elasticidade','se falta massa ou nutrição'],['Couro cabeludo','oleosidade, sensibilidade e queda'],
+  ['Histórico de química','o que o fio já passou'],['Hábitos e calor','sol, piscina, prancha e rotina'],['Saúde e sensibilidades','para indicar produtos seguros'],['Seus objetivos','onde você quer chegar']];
+var RECEBE = ['Mapa das necessidades do seu cabelo','Cronograma capilar de 4 semanas','Rotina passo a passo com produtos em 3 faixas de investimento','Alertas e cuidados para o seu caso','Plano de tratamentos no salão','Revisão do plano em 30 dias'];
+var FAQ = [['Preciso ir ao salão?','Não. A consulta pode ser por vídeo. No salão a Nini também faz testes no fio na hora.'],
+  ['E se eu não quiser comprar os produtos indicados?','Sem problema. A rotina mostra o que usar e como; você escolhe a faixa de investimento ou usa o que já tem.'],
+  ['Quanto tempo leva?','O pré-diagnóstico leva uns 5 minutos. A consulta, de 30 a 40 minutos. A rotina chega em até 24 horas.'],
+  ['O valor volta?','Sim. Os R$ 97 viram crédito em qualquer serviço do salão em até 30 dias.']];
 function telaDiagnostico(){
   if(state.diag==='form') return telaForm();
-  if(state.diag==='exemplo') return '<div class="proto">Exemplo de rotina montada pela plataforma</div><button class="back" data-act="diag-home">← Diagnóstico</button>'+rotinaHTML(sugerirPrescricao(EXEMPLO_PED), EXEMPLO_PED, true);
-  var h = '<div class="proto">Protótipo · valor e textos sugeridos</div><div class="top"><h2>Diagnóstico capilar</h2></div>';
+  if(state.diag==='exemplo') return '<div class="proto">Exemplo de diagnóstico montado pela plataforma</div><button class="back" data-act="diag-home">← Diagnóstico</button>'+rotinaHTML(sugerirPrescricao(EXEMPLO_PED), EXEMPLO_PED, true);
+  var h = '<div class="proto">Protótipo · valor e textos sugeridos</div>';
   if(state.meuPedido && state.minhaPres) h += rotinaHTML(state.minhaPres, state.meuPedido, false);
-  else if(state.meuPedido) h += '<div class="ok-box"><b>Recebemos seu pré-diagnóstico</b><p>A Nini vai olhar suas respostas e fotos e chama você no WhatsApp para marcar a consulta. Sua rotina aparece aqui depois.</p></div>';
-  h += '<section class="panel"><span class="label">Investimento na consulta com a Nini</span><span class="pricebig">R$ 97</span>'+
-    '<p class="sub">O valor volta como crédito em qualquer serviço do salão em até 30 dias.</p>'+
-    '<ol><li>Você responde o pré-diagnóstico e manda fotos do cabelo.</li><li>Conversa de 30 a 40 minutos com a Nini, por vídeo ou no salão.</li><li>Em até 24 horas recebe sua rotina, com cronograma e produtos em três faixas de investimento.</li><li>Em 30 dias, a Nini revisa com você.</li></ol>'+
-    '<button class="btn primary block" data-act="diag-start">'+(state.meuPedido?'Fazer novo pré-diagnóstico':'Começar pré-diagnóstico')+'</button>'+
-    '<button class="btn ghost block" data-act="diag-exemplo">Ver um exemplo de rotina</button></section>'+
-    perfilBox();
+  else if(state.meuPedido) h += '<div class="ok-box"><b>Recebemos seu pré-diagnóstico</b><p>A Nini vai olhar suas respostas e fotos e chama você no WhatsApp para marcar a consulta. Seu diagnóstico aparece aqui depois.</p></div>';
+  h += '<section class="hero s2" style="display:flex"><span class="kick">Com a Nini</span><h1>Diagnóstico capilar completo</h1><p>Uma análise do seu fio e do seu couro cabeludo, com um plano feito para você.</p>'+
+    '<div style="display:flex;align-items:baseline;gap:10px;flex-wrap:wrap"><span class="pricebig" style="color:inherit">R$ 97</span><span style="opacity:.85;font-size:.9rem">volta como crédito em serviços do salão</span></div>'+
+    '<button class="btn light" data-act="diag-start">'+(state.meuPedido?'Fazer novo pré-diagnóstico':'Começar pré-diagnóstico')+' →</button></section>'+
+    '<section class="section"><h2>O que a Nini analisa</h2><div class="analisa">'+ANALISA.map(function(a,i){ return '<div><span class="num">'+(i+1)+'</span><b>'+a[0]+'</b><small>'+a[1]+'</small></div>'; }).join('')+'</div></section>'+
+    '<section class="panel"><span class="label">Você recebe</span><ul class="recebe">'+RECEBE.map(function(r){ return '<li>'+r+'</li>'; }).join('')+'</ul>'+
+    '<button class="btn ghost block" data-act="diag-exemplo">Ver um exemplo de diagnóstico</button></section>'+
+    '<section class="section"><h2>Como funciona</h2><ol class="como">'+
+      ['Você responde o pré-diagnóstico e manda fotos do cabelo.','A Nini analisa suas respostas antes da consulta.','Consulta de 30 a 40 minutos, por vídeo ou no salão.','Em até 24 horas, seu diagnóstico e sua rotina aparecem aqui no app.','Em 30 dias, a Nini revisa o plano com você.']
+      .map(function(t){ return '<li>'+t+'</li>'; }).join('')+'</ol></section>'+
+    '<section class="section"><h2>Dúvidas</h2>'+FAQ.map(function(f){ return '<details class="faq"><summary>'+f[0]+'</summary><p>'+f[1]+'</p></details>'; }).join('')+'</section>'+
+    '<button class="btn primary block" data-act="diag-start">Começar pré-diagnóstico</button>'+perfilBox();
   return h;
 }
 
@@ -1098,7 +1324,7 @@ async function abrirPedido(id){
   var ped = (state.pedidos||[]).find(function(x){return x.id===id}); if(!ped) return;
   state.pedAberto = ped; state.editor = null; render();
   var pres = null; try{ pres = await store.get('prescricoes', id); }catch(e){}
-  state.editor = pres ? JSON.parse(JSON.stringify(pres)) : sugerirPrescricao(ped);
+  state.editor = (pres && pres.versao) ? JSON.parse(JSON.stringify(pres)) : sugerirPrescricao(ped);
   render();
 }
 function candidatos(ped, f){
@@ -1124,21 +1350,32 @@ function telaPainel(){
 }
 function telaPedido(){
   var p = state.pedAberto, e = state.editor;
+  var j = function(v){ return Array.isArray(v) ? v.join(', ') : v; };
   var h = '<div class="proto">Área da Nini · só ela vê</div><button class="back" data-act="ped-voltar">← Pedidos</button>'+
     '<div class="top"><h2>'+esc(p.nome||'Cliente')+'</h2><span class="pill '+(p.status||'novo')+'">'+(p.status==='prescrito'?'Rotina enviada':'Novo')+'</span></div>'+
     '<section class="panel"><span class="label">Respostas</span><dl class="kv">'+
-    [['WhatsApp',p.whats],['Fio',nomeFio(p.fio)],['Comprimento',p.comprimento],['Química',(p.quimica||[]).join(', ')],['Lava',p.lavagem],['Calor',p.calor],['Incomoda',(p.queixas||[]).map(nomeProb).join(', ')],['Objetivo',p.objetivo],['Orçamento',p.orcamento],['Consulta',p.formato],['Fotos',p.fotos?p.fotos+' enviada(s)':'nenhuma']]
+    [['WhatsApp',p.whats],['Idade',p.idade],['Fio',nomeFio(p.fio)],['Espessura',p.espessura],['Quantidade',p.volume],['Comprimento',p.comprimento],
+     ['Couro cabeludo',p.couro],['Sintomas',j(p.sintomas)],['Lava',p.lavagem],['Porosidade',p.porosidade],['Elasticidade',p.elasticidade],
+     ['Química',j(p.quimica)],['Última química',p.quandoQuimica],['Calor',p.calor],['Prancha',p.temperatura],['Usa hoje',p.produtos],['Hábitos',j(p.habitos)],
+     ['Finaliza',p.finalizacao],['Tempo',p.tempo],['Saúde',j(p.saude)],['Alergias',p.alergias],['Incomoda',(p.queixas||[]).map(nomeProb).join(', ')],
+     ['Objetivo',p.objetivoPrincipal],['Nas palavras dela',p.objetivo],['Orçamento',p.orcamento],['Consulta',p.formato],['Fotos',p.fotos?p.fotos+' enviada(s)':'nenhuma']]
       .filter(function(r){return r[1]}).map(function(r){ return '<dt>'+r[0]+'</dt><dd>'+esc(r[1])+'</dd>'; }).join('')+'</dl>'+
     '<button class="btn ghost block" data-act="whats">Chamar no WhatsApp</button></section>';
   if(!e) return h+'<p class="sub">Preparando sugestão…</p>';
-  h += '<section class="panel"><div class="section-head"><span class="label">Rotina da cliente</span><span class="sug">sugestão automática</span></div>'+
+  var s = e.scores||calcScores(p);
+  h += '<section class="panel"><div class="section-head"><span class="label">Diagnóstico da cliente</span><span class="sug">sugestão automática</span></div>'+
+    '<div class="scores">'+barra('Hidratação',s.H)+barra('Nutrição',s.N)+barra('Reconstrução',s.R)+barra('Couro cabeludo',s.C)+'</div>'+
     '<div class="field"><label for="e-diag">Diagnóstico</label><textarea id="e-diag" data-pin="diagnostico">'+esc(e.diagnostico)+'</textarea></div>'+
     '<span class="label">Cronograma</span><div class="crono">'+e.cronograma.map(function(c,i){ return '<div class="wk"><small>Semana '+(i+1)+'</small><select data-crono="'+i+'" aria-label="Semana '+(i+1)+'">'+Object.keys(CRONO).map(function(k){ return '<option value="'+k+'"'+(k===c?' selected':'')+'>'+CRONO[k]+'</option>'; }).join('')+'</select></div>'; }).join('')+'</div>'+
-    '<div class="field"><label for="e-passos">Passo a passo (um por linha)</label><textarea id="e-passos" data-pin="passos">'+esc((e.passos||[]).join('\n'))+'</textarea></div>'+
-    FAIXAS.map(function(f){ var sel = e.faixas[f[0]]||[];
-      return '<div class="faixa"><b>'+f[1]+'</b>'+candidatos(p, f[0]).map(function(x){ return '<label class="check"><input type="checkbox" data-pprod="'+f[0]+'|'+x.id+'"'+(sel.indexOf(x.id)>=0?' checked':'')+'><span>'+esc(x.marca)+' · '+esc(x.nome)+' <small>'+(x.real?precoTxt(x):'')+'</small></span></label>'; }).join('')+'</div>'; }).join('')+
+    '<div class="field"><label for="e-lav">Frequência de lavagem</label><input id="e-lav" data-pin="lavagens" type="text" value="'+esc(e.lavagens||'')+'"></div>'+
+    '<span class="label">Produtos por etapa</span>'+
+    (e.etapas||[]).map(function(et,i){ return '<div class="etapa"><div class="et-head"><span class="num">'+(i+1)+'</span><b>'+esc(et.etapa)+'</b></div>'+
+      '<div class="fx-grid">'+FAIXAS.map(function(f){ var cand = candEtapa(p, et.cats||[], f[0], []), atual = et.ids[f[0]];
+        return '<div class="field"><label>'+f[1]+'</label><select data-eprod="'+i+'|'+f[0]+'"><option value="">—</option>'+cand.map(function(x){ return '<option value="'+x.id+'"'+(x.id===atual?' selected':'')+'>'+esc(x.marca+' · '+x.nome)+' · '+precoTxt(x)+'</option>'; }).join('')+'</select></div>'; }).join('')+'</div></div>'; }).join('')+
+    '<div class="field"><label for="e-al">Alertas (um por linha)</label><textarea id="e-al" data-pin="alertasTxt">'+esc(e.alertasTxt||'')+'</textarea></div>'+
+    '<div class="field"><label for="e-sal">Tratamentos no salão (um por linha)</label><textarea id="e-sal" data-pin="salaoTxt">'+esc(e.salaoTxt||'')+'</textarea></div>'+
     '<div class="field"><label for="e-dicas">Dicas</label><textarea id="e-dicas" data-pin="dicas">'+esc(e.dicas||'')+'</textarea></div>'+
-    '<div class="row2"><button class="btn ghost" data-act="pres-sugerir">Refazer sugestão</button><button class="btn primary" data-act="pres-enviar">Enviar rotina</button></div></section>';
+    '<div class="row2"><button class="btn ghost" data-act="pres-sugerir">Refazer sugestão</button><button class="btn primary" data-act="pres-enviar">Enviar para a cliente</button></div></section>';
   return h;
 }
 
@@ -1244,16 +1481,18 @@ function validarPasso(){
   var f = state.form, p = state.passo;
   if(p===1){ if(!(f.nome||'').trim()) return 'Escreva seu nome para continuar.'; if((f.whats||'').replace(/\D/g,'').length<10) return 'Coloque o WhatsApp com DDD.'; }
   if(p===2 && !f.fio) return 'Escolha o tipo de fio.';
-  if(p===5 && !f.formato) return 'Escolha como prefere a consulta.';
+  if(p===TOTAL_PASSOS && !f.formato) return 'Escolha como prefere a consulta.';
   return '';
 }
 async function enviarPedido(){
   var f = state.form;
-  var ped = {nome:f.nome.trim(), whats:f.whats.trim(), fio:f.fio, comprimento:f.comprimento||'', quimica:f.quimica||[], lavagem:f.lavagem||'', calor:f.calor||'', queixas:f.queixas||[], objetivo:(f.objetivo||'').trim(), orcamento:f.orcamento||'', formato:f.formato, fotos:f.fotos||0, status:'novo'};
+  var ped = {};
+  Object.keys(f).forEach(function(k){ if(k!=='fotosUrls'){ var v = f[k]; ped[k] = typeof v==='string' ? v.trim() : v; } });
+  ped.fotos = f.fotos||0; ped.status = 'novo';
   try{
     var id = await store.add('pedidos', ped);
     try{ localStorage.setItem('nini-meu-pedido', (SB && store.ultimoToken) ? store.ultimoToken : id); }catch(e){}
-    state.form = {quimica:[], queixas:[]}; state.passo = 1; state.diag = 'home';
+    state.form = {quimica:[], queixas:[], sintomas:[], habitos:[], saude:[]}; state.passo = 1; state.diag = 'home';
     state.meuPedido = Object.assign({id:id}, ped); state.minhaPres = null;
     render(); window.scrollTo(0,0); toast('Pré-diagnóstico enviado para a Nini.');
   }catch(e){ state.erro = 'Não deu para enviar agora. Tente de novo em instantes.'; render(); }
@@ -1317,7 +1556,8 @@ document.addEventListener('click', function(e){
     })(); return; }
   if(d.fsel){ var a=d.fsel.split('|'); state.form[a[0]]=a[1]; state.erro=''; render(); return; }
   if(d.fmul){ var b=d.fmul.split('|'), arr=state.form[b[0]]=(state.form[b[0]]||[]);
-    var k=arr.indexOf(b[1]); if(k>=0) arr.splice(k,1); else { if(b[1]==='Nenhuma') arr.length=0; else { var n=arr.indexOf('Nenhuma'); if(n>=0) arr.splice(n,1); } arr.push(b[1]); }
+    var exc = EXCLUSIVOS[b[0]];
+    var k=arr.indexOf(b[1]); if(k>=0) arr.splice(k,1); else { if(exc && b[1]===exc) arr.length=0; else if(exc){ var n=arr.indexOf(exc); if(n>=0) arr.splice(n,1); } arr.push(b[1]); }
     render(); return; }
   if(d.ped){ abrirPedido(d.ped); window.scrollTo(0,0); return; }
   switch(d.act){
@@ -1332,7 +1572,7 @@ document.addEventListener('click', function(e){
     case 'pres-sugerir': state.editor=sugerirPrescricao(state.pedAberto); render(); return;
     case 'pres-enviar': enviarPrescricao(); return;
   }
-  if(d.ftipo!==undefined){ feedTipo = d.ftipo || null; render(); return; }
+  if(d.ftipo!==undefined){ feedFiltro = d.ftipo || null; render(); return; }
   if(d.like){ curtidas[d.like] = !curtidas[d.like]; render(); return; }
   if(d.act==='comentar'){ toast('No app de verdade, as clientes comentam aqui.'); return; }
   if(d.act==='salvar-post'){ toast('Post salvo para ver depois.'); return; }
@@ -1365,6 +1605,7 @@ document.addEventListener('input', function(e){
 document.addEventListener('change', function(e){
   var t = e.target, d = t.dataset || {};
   if(d.crono!==undefined && state.editor){ state.editor.cronograma[+d.crono] = t.value; }
+  if(d.eprod && state.editor){ var ep = d.eprod.split('|'); state.editor.etapas[+ep[0]].ids[ep[1]] = t.value ? +t.value : null; }
   if(d.eprice){ var it=(state.estoque||[]).find(function(x){return x.id===d.eprice}); var v=parseFloat(t.value); if(it && v>=0){ it.preco=v; salvarItem(it).then(function(){ toast('Preço salvo.'); }).catch(function(){ toast('Não deu para salvar agora.'); }); } }
   if(d.pprod && state.editor){ var a=d.pprod.split('|'), id=+a[1], l=state.editor.faixas[a[0]]=(state.editor.faixas[a[0]]||[]);
     var i=l.indexOf(id); if(t.checked && i<0) l.push(id); if(!t.checked && i>=0) l.splice(i,1); }
